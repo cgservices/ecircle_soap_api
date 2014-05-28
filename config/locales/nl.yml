@@ -1,0 +1,9 @@
+nl:
+  ecircle_api:
+    errors:
+      carrier_does_not_match: "The carrier and the phonenumber don't match."
+      connection_error: "Er kon geen verbinding gemaakt worden met DCGW. Probeer het later nog eens."
+      carrier_not_found: "Het nummer kon niet gekoppeld worden aan een provider."
+      wrong_format_number: "Het nummer heeft niet het correcte format."
+      users_daily_limit_reached: "We hebben vandaag teveel verzoeken naar Hay gestuurd. Probeer het morgen nog een keer."
+      subscriber_number_not_valid: "Nummer is niet in het correcte formaat."

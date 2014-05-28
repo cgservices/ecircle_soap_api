@@ -1,0 +1,9 @@
+en:
+  ecircle_api:
+    errors:
+      carrier_does_not_match: "The carrier and the phone number don't match."
+      connection_error: "There has been an error connecting to the Digital Codes Gateway. Please try again later."
+      carrier_not_found: "Number could not be matched to a carrier."
+      wrong_format_number: "The number is not in the correct format."
+      users_daily_limit_reached: "We've sent too many top up requests to Hay and we've reached our daily limit. Please try again tomorrow."
+      subscriber_number_not_valid: "Subscriber number not valid."

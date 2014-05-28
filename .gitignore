@@ -8,7 +8,7 @@
 /.bundle
 
 database.yml
-config/initializers/ecircle_soap_api.rb
+/spec/dummy/config/initializers/ecircle_soap_api.rb
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp

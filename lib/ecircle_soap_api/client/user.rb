@@ -8,7 +8,7 @@ module EcircleSoapApi
         @id = data[:id] || nil
         @email = data[:email] || nil
         @mobile_number = data[:mobile_number] || nil
-        @attributes = data[:attributes] || {}
+        @attributes = data[:attributes] || ActiveSupport::HashWithIndifferentAccess.new
       rescue => e
         EcircleSoapApi::ResponseException.new(e)
       end
@@ -17,7 +17,7 @@ module EcircleSoapApi
         data.each do |d|
           @attributes[d[:name].split('.').last.underscore] = d[:value]
         end
-        @attributes
+        @attributes.with_indifferent_access
       end
 
       # Fields and functions used for Api connection

@@ -11,5 +11,6 @@ database.yml
 /spec/dummy/config/initializers/ecircle_soap_api.rb
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/spec/dummy/log
 /tmp
-
+/spec/dummy/tmp

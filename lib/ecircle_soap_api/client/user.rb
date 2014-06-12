@@ -5,7 +5,7 @@ module EcircleSoapApi
       attr_accessor :id, :email, :mobile_number, :attributes
 
       def initialize(data)
-        @id = data[:id] || nil
+        @id = data[:id].try(:to_i) || nil
         @email = data[:email] || nil
         @mobile_number = data[:mobile_number] || nil
         @attributes = data[:attributes] || ActiveSupport::HashWithIndifferentAccess.new
@@ -21,7 +21,7 @@ module EcircleSoapApi
       end
 
       # Fields and functions used for Api connection
-      operations :user_get, :user_get_by_email, :user_get_profile, :user_create, :user_delete
+      operations :user_get, :user_get_by_email, :user_get_profile, :user_create, :user_update_profile, :user_delete
       class << self
         def find(id)
           initialize_connection
@@ -61,6 +61,11 @@ module EcircleSoapApi
           end
         rescue => e
           EcircleSoapApi::ResponseException.new(e)
+        end
+
+        def update(id, *attributes)
+          initialize_connection
+          user_update_profile(message: {'userId' => id, 'attributes' => attributes.flatten})
         end
 
         def delete(id)

@@ -66,6 +66,8 @@ module EcircleSoapApi
         def update(id, *attributes)
           initialize_connection
           user_update_profile(message: {'userId' => id, 'attributes' => attributes.flatten})
+        rescue => e
+          EcircleSoapApi::ResponseException.new(e)
         end
 
         def delete(id)

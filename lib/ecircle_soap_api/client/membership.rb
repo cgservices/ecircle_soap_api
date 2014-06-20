@@ -38,6 +38,8 @@ module EcircleSoapApi
             response_hash.is_a?(Hash) ? memberships << self.new(response_hash) : memberships = response_hash.map{|m| self.new(m)}
           end
           memberships
+        rescue => e
+          EcircleSoapApi::ResponseException.new(e)
         end
 
         def delete(user_id, group_id)

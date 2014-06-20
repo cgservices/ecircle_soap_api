@@ -16,4 +16,4 @@ In your config/initializers create ecircle_soap_api.rb
     end
 
 ## Usage
-    See spec/integration for usage
+    See spec/user for usage

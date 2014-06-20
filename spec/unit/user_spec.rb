@@ -32,10 +32,10 @@ describe "E-circle User Client" do
   it "should create a user with email address: lenny.lungus@gmail.com and custom attributes find it by id and delete the created user afterwards" do
     expected_user = EcircleSoapApi::Client::User.new({email: 'lenny.lungus@gmail.com', mobile_number: nil, attributes: nil})
 
-    user = EcircleSoapApi::Client::User.create('lenny.lungus@gmail.com', {name: 'FirstName', value:'Lenny'})
+    user = EcircleSoapApi::Client::User.create('lenny.lungus@gmail.com', {name: 'ISOCountryCode', value:'NL'})
 
     new_user = EcircleSoapApi::Client::User.find_user_with_attributes(user.id)
-    new_user.attributes[:first_name].should eq('Lenny')
+    new_user.attributes[:iso_country_code].should eq('NL')
 
     EcircleSoapApi::Client::User.delete(new_user.id)
     lambda {EcircleSoapApi::Client::User.find_by_email('lenny.lungus@gmail.com')}.should raise_error(EcircleSoapApi::ObjectNotFound)

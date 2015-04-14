@@ -19,7 +19,7 @@ module EcircleSoapApi
         @attributes.with_indifferent_access
       end
 
-      operations :membership_create, :membership_delete, :membership_find_all
+      operations :membership_create, :membership_delete, :membership_find_all, :membership_unsubscribe_from_message
       class << self
         def create(user_id, group_id)
           initialize_connection
@@ -48,6 +48,14 @@ module EcircleSoapApi
         rescue => e
           EcircleSoapApi::ResponseException.new(e)
         end
+
+        def unsubscribe_from_message(user_id, group_id, message_id)
+          initialize_connection
+          membership_unsubscribe_from_message(message: {'userId' => user_id, 'groupId' => group_id, 'messageId' => message_id})
+        rescue => e
+          EcircleSoapApi::ResponseException.new(e)
+        end
+
       end
     end
   end

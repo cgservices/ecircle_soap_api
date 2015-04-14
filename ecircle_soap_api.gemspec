@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
-  gem.authors       = ['Luis Doubrava']
-  gem.email         = ['luis@cg.nl']
+  gem.authors       = ['Luis Doubrava', 'Pieter Martens']
+  gem.email         = ['luis@cg.nl', 'pieter@cg.nl']
   gem.description   = 'Ruby library for e-Circle Api'
   gem.summary       = 'Ruby library for e-Circle Api'
   gem.homepage      = ''
@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'ecircle_soap_api'
   gem.require_paths = ['lib', 'config', 'db']
-  gem.version       = "0.0.6"
+  gem.version       = "0.0.7"
 
   gem.add_dependency('json', ['>= 0'])
   gem.add_dependency('activesupport', ['>= 0'])
